@@ -8,28 +8,31 @@
 
 import UIKit
 
+protocol EditVCDelegate: class {
+    var nameLabel: UILabel { get }
+}
+
 class EditViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    weak var delegate: EditVCDelegate?
+    
+    override func loadView() {
+        view = EditView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let editView = view as! EditView
+        editView.editButton.addTarget(self, action: "edit:", forControlEvents: .TouchUpInside)
     }
-    */
 
+    
+    func edit(sender: UIButton) {
+        let editView = view as! EditView
+        delegate?.nameLabel.text = editView.nameTextField.text
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

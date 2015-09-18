@@ -8,14 +8,39 @@
 
 import UIKit
 
-class HomeView: UIView {
+class HomeView: UIView, EditVCDelegate {
+    let nameLabel: UILabel
+    let transitButton: UIButton
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+    required init() {
+        nameLabel = UILabel()
+        transitButton = UIButton()
+        
+        super.init(frame: CGRectZero)
+        addSubview(nameLabel)
+        addSubview(transitButton)
     }
-    */
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = UIColor.whiteColor()
+    
+        print(frame)
+        nameLabel.frame.size = CGSize(width: 200, height: 20)
+        nameLabel.center = CGPoint(x: center.x, y: center.y / 2)
+        nameLabel.textAlignment = .Center
+        nameLabel.text = "No name"
+        print(nameLabel.frame)
+        
+        transitButton.frame.size = CGSize(width: 100, height: 20)
+        transitButton.center = center
+        transitButton.setTitle("名前を変更", forState: .Normal)
+        transitButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        transitButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
+        print(transitButton.frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
