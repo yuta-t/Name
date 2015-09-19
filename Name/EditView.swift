@@ -20,9 +20,9 @@ class EditView: UIView {
     let editButton: UIButton
     
     required init() {
-        promptLabel = UILabel()
-        nameTextField = UITextField()
-        editButton = UIButton()
+        promptLabel = UILabel(frame: CGRectZero)
+        nameTextField = UITextField(frame: CGRectZero)
+        editButton = UIButton(frame: CGRectZero)
         
         super.init(frame: CGRectZero)
         addSubview(promptLabel)
