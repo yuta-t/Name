@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let homeView = view as! HomeView
         if let editVC = segue.destinationViewController as? EditViewController {
-            editVC.delegate = homeView
             
             if homeView.nameLabel.text != "No name" {
                 let editView = editVC.view as! EditView

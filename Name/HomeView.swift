@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeView: UIView, EditVCDelegate {
+class HomeView: UIView {
     let nameLabel: UILabel
     let transitButton: UIButton
 

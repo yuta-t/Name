@@ -8,13 +8,7 @@
 
 import UIKit
 
-protocol EditVCDelegate: class {
-    var nameLabel: UILabel { get }
-}
-
 class EditViewController: UIViewController {
-    weak var delegate: EditVCDelegate?
-    
     override func loadView() {
         view = EditView()
     }
@@ -28,7 +22,6 @@ class EditViewController: UIViewController {
     
     func edit(sender: UIButton) {
         let editView = view as! EditView
-        delegate?.nameLabel.text = editView.nameTextField.text
         dismissViewControllerAnimated(true, completion: nil)
     }
     
