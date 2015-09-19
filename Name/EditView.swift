@@ -13,7 +13,7 @@ protocol EditViewDelegate: class {
 }
 
 class EditView: UIView {
-    var delegate: EditViewDelegate?
+    weak var delegate: EditViewDelegate?
     
     let promptLabel: UILabel
     let nameTextField: UITextField
