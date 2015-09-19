@@ -33,24 +33,34 @@ class EditView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = UIColor.whiteColor()
-        
+    
+        layoutPromptLabel()
+        layoutNameTextField()
+        layoutEditButton()
+    }
+
+    private func layoutPromptLabel() {
         promptLabel.frame.size = CGSize(width: 200, height: 20)
         promptLabel.center = CGPoint(x: center.x, y: center.y / 2 - 20)
         promptLabel.text = "名前を入力してください"
-        
+    }
+    
+    private func layoutNameTextField() {
         nameTextField.frame.size = CGSize(width: 100, height: 20)
         nameTextField.center = CGPoint(x: center.x, y: center.y / 2 + 20)
         nameTextField.layer.borderWidth = 1
         nameTextField.layer.borderColor = UIColor.lightGrayColor().CGColor
         nameTextField.layer.cornerRadius = 2
-        
+    }
+    
+    private func layoutEditButton() {
         editButton.frame.size = CGSize(width: 100, height: 20)
         editButton.center = center
         editButton.setTitle("変更", forState: .Normal)
         editButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         editButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
