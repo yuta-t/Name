@@ -13,8 +13,8 @@ class HomeView: UIView, EditViewDelegate {
     let transitButton: UIButton
 
     required init() {
-        nameLabel = UILabel()
-        transitButton = UIButton()
+        nameLabel = UILabel(frame: CGRectZero)
+        transitButton = UIButton(frame: CGRectZero)
         
         super.init(frame: CGRectZero)
         addSubview(nameLabel)
