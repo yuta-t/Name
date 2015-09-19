@@ -22,6 +22,7 @@ class EditViewController: UIViewController {
     
     func edit(sender: UIButton) {
         let editView = view as! EditView
+        editView.delegate?.changeLabel(editView.nameTextField.text!)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol EditViewDelegate: class {
+    func changeLabel(text: String)
+}
+
 class EditView: UIView {
+    var delegate: EditViewDelegate?
+    
     let promptLabel: UILabel
     let nameTextField: UITextField
     let editButton: UIButton

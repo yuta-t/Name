@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeView: UIView {
+class HomeView: UIView, EditViewDelegate {
     let nameLabel: UILabel
     let transitButton: UIButton
 
@@ -35,6 +35,14 @@ class HomeView: UIView {
         transitButton.setTitle("名前を変更", forState: .Normal)
         transitButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         transitButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
+    }
+    
+    func changeLabel(text: String) {
+        if text.isEmpty {
+            nameLabel.text = "No name"
+        } else {
+            nameLabel.text = text
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
