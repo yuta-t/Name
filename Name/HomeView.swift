@@ -12,6 +12,24 @@ class HomeView: UIView, EditViewDelegate {
     let nameLabel: UILabel
     let transitButton: UIButton
 
+    var name: String? {
+        get {
+            if nameLabel.text == "No name" {
+                return nil
+            } else {
+                return nameLabel.text
+            }
+        }
+        
+        set(name) {
+            if let name = name {
+                nameLabel.text = name
+            } else {
+                nameLabel.text = "No name"
+            }
+        }
+    }
+    
     required init() {
         nameLabel = UILabel(frame: CGRectZero)
         transitButton = UIButton(frame: CGRectZero)
@@ -32,7 +50,7 @@ class HomeView: UIView, EditViewDelegate {
         nameLabel.frame.size = CGSize(width: 200, height: 20)
         nameLabel.center = CGPoint(x: center.x, y: center.y / 2)
         nameLabel.textAlignment = .Center
-        nameLabel.text = "No name"
+        name = nil
     }
     
     private func layoutTransitButton() {
@@ -43,12 +61,8 @@ class HomeView: UIView, EditViewDelegate {
         transitButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
     }
     
-    func changeLabel(text: String) {
-        if text.isEmpty {
-            nameLabel.text = "No name"
-        } else {
-            nameLabel.text = text
-        }
+    func changeName(text: String?) {
+        name = text
     }
     
     required init?(coder aDecoder: NSCoder) {

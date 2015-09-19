@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EditViewDelegate: class {
-    func changeLabel(text: String)
+    func changeName(text: String?)
 }
 
 class EditView: UIView {
@@ -18,6 +18,20 @@ class EditView: UIView {
     let promptLabel: UILabel
     let nameTextField: UITextField
     let editButton: UIButton
+    
+    var name: String? {
+        get {
+            if nameTextField.text!.isEmpty {
+                return nil
+            } else {
+                return nameTextField.text!
+            }
+        }
+        
+        set(name) {
+            nameTextField.text = name
+        }
+    }
     
     required init() {
         promptLabel = UILabel(frame: CGRectZero)

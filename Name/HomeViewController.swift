@@ -30,9 +30,7 @@ class HomeViewController: UIViewController {
             let editView = editVC.view as! EditView
             editView.delegate = homeView
             
-            if homeView.nameLabel.text != "No name" {
-                editView.nameTextField.text = homeView.nameLabel.text
-            }
+            editView.name = homeView.name
         }
     }
 
