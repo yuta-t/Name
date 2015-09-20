@@ -9,24 +9,18 @@
 import UIKit
 
 class HomeView: UIView, EditViewDelegate {
+    private let model = HomeModel()
+    
     let nameLabel: UILabel
     let transitButton: UIButton
 
     var name: String? {
         get {
-            if nameLabel.text == "No name" {
-                return nil
-            } else {
-                return nameLabel.text
-            }
+            return model.nameShouldGet(nameLabel.text)
         }
         
         set(name) {
-            if let name = name {
-                nameLabel.text = name
-            } else {
-                nameLabel.text = "No name"
-            }
+            nameLabel.text = model.nameShouldSet(name)
         }
     }
     

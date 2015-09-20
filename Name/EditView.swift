@@ -13,6 +13,8 @@ protocol EditViewDelegate: class {
 }
 
 class EditView: UIView {
+    private let model = EditModel()
+    
     weak var delegate: EditViewDelegate?
     
     let promptLabel: UILabel
@@ -21,11 +23,7 @@ class EditView: UIView {
     
     var name: String? {
         get {
-            if nameTextField.text!.isEmpty {
-                return nil
-            } else {
-                return nameTextField.text!
-            }
+            return model.nameShouldGet(nameTextField.text)
         }
         
         set(name) {
