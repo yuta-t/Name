@@ -13,6 +13,9 @@ protocol EditViewDelegate: class {
 }
 
 class EditView: UIView {
+    // Properties
+    private let model = EditModel()
+    
     weak var delegate: EditViewDelegate?
     
     let promptLabel: UILabel
@@ -21,11 +24,7 @@ class EditView: UIView {
     
     var name: String? {
         get {
-            if nameTextField.text!.isEmpty {
-                return nil
-            } else {
-                return nameTextField.text!
-            }
+            return model.nameShouldGet(nameTextField.text)
         }
         
         set(name) {
@@ -33,6 +32,8 @@ class EditView: UIView {
         }
     }
     
+    
+    // Initializers
     required init() {
         promptLabel = UILabel(frame: CGRectZero)
         nameTextField = UITextField(frame: CGRectZero)
@@ -44,6 +45,10 @@ class EditView: UIView {
         addSubview(editButton)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         backgroundColor = UIColor.whiteColor()
@@ -53,6 +58,8 @@ class EditView: UIView {
         layoutEditButton()
     }
 
+    
+    // Layout Methods
     private func layoutPromptLabel() {
         promptLabel.frame.size = CGSize(width: 200, height: 20)
         promptLabel.center = CGPoint(x: center.x, y: center.y / 2 - 20)
@@ -73,9 +80,5 @@ class EditView: UIView {
         editButton.setTitle("変更", forState: .Normal)
         editButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
         editButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

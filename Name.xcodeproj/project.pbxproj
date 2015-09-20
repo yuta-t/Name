@@ -17,6 +17,8 @@
 		01D2019F1BAC298000DE1161 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D2019E1BAC298000DE1161 /* HomeView.swift */; settings = {ASSET_TAGS = (); }; };
 		01D201A21BAC299100DE1161 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D201A11BAC299100DE1161 /* EditView.swift */; settings = {ASSET_TAGS = (); }; };
 		01D201A41BAC299B00DE1161 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D201A31BAC299B00DE1161 /* EditViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		01D201A71BAEAE8300DE1161 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D201A61BAEAE8300DE1161 /* HomeModel.swift */; settings = {ASSET_TAGS = (); }; };
+		01D201A91BAEB30E00DE1161 /* EditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D201A81BAEB30E00DE1161 /* EditModel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		01D2019E1BAC298000DE1161 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		01D201A11BAC299100DE1161 /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		01D201A31BAC299B00DE1161 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		01D201A61BAEAE8300DE1161 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		01D201A81BAEB30E00DE1161 /* EditModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 			children = (
 				01D201711BAC295000DE1161 /* HomeViewController.swift */,
 				01D2019E1BAC298000DE1161 /* HomeView.swift */,
+				01D201A61BAEAE8300DE1161 /* HomeModel.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			children = (
 				01D201A31BAC299B00DE1161 /* EditViewController.swift */,
 				01D201A11BAC299100DE1161 /* EditView.swift */,
+				01D201A81BAEB30E00DE1161 /* EditModel.swift */,
 			);
 			name = Edit;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 			files = (
 				01D201A41BAC299B00DE1161 /* EditViewController.swift in Sources */,
 				01D2019F1BAC298000DE1161 /* HomeView.swift in Sources */,
+				01D201A91BAEB30E00DE1161 /* EditModel.swift in Sources */,
+				01D201A71BAEAE8300DE1161 /* HomeModel.swift in Sources */,
 				01D201721BAC295000DE1161 /* HomeViewController.swift in Sources */,
 				01D201A21BAC299100DE1161 /* EditView.swift in Sources */,
 				01D201701BAC295000DE1161 /* AppDelegate.swift in Sources */,
@@ -522,6 +530,7 @@
 				01D201961BAC295100DE1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D201971BAC295100DE1161 /* Build configuration list for PBXNativeTarget "NameTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +539,7 @@
 				01D201991BAC295100DE1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D2019A1BAC295100DE1161 /* Build configuration list for PBXNativeTarget "NameUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +548,7 @@
 				01D2019C1BAC295100DE1161 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
