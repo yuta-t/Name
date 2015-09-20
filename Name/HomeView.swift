@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeView: UIView, EditViewDelegate {
+    // Properties
     private let model = HomeModel()
     
     let nameLabel: UILabel
@@ -24,6 +25,8 @@ class HomeView: UIView, EditViewDelegate {
         }
     }
     
+    
+    // Initializers
     required init() {
         nameLabel = UILabel(frame: CGRectZero)
         transitButton = UIButton(frame: CGRectZero)
@@ -31,6 +34,10 @@ class HomeView: UIView, EditViewDelegate {
         super.init(frame: CGRectZero)
         addSubview(nameLabel)
         addSubview(transitButton)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func layoutSubviews() {
@@ -40,6 +47,8 @@ class HomeView: UIView, EditViewDelegate {
         layoutTransitButton()
     }
     
+    
+    // Layout Methods
     private func layoutNameLabel() {
         nameLabel.frame.size = CGSize(width: 200, height: 20)
         nameLabel.center = CGPoint(x: center.x, y: center.y / 2)
@@ -55,11 +64,9 @@ class HomeView: UIView, EditViewDelegate {
         transitButton.setTitleColor(UIColor.grayColor(), forState: .Highlighted)
     }
     
+    
+    // Delegate Method
     func changeName(text: String?) {
         name = text
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
